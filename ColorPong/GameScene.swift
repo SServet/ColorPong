@@ -47,7 +47,7 @@ class GameScene: SKScene {
         let center = size.width/2.0
         let difference = CGFloat(70.0)
         
-        ball.constraints = [SKConstraint.positionX(SKRange(constantValue: center - difference)), SKConstraint.positionX(SKRange(constantValue: center)), SKConstraint.positionX(SKRange(constantValue: center + difference))]
+        
         
         scoreLabel = self.childNode(withName: "Score") as! SKLabelNode
         ball.position.x = 335
@@ -58,6 +58,9 @@ class GameScene: SKScene {
         Checkpoint2 = self.childNode(withName: "Checkpoint2") as! SKSpriteNode
         Checkpoint1.color = .green
         Checkpoint2.color = .blue
+        
+        ball.constraints = [SKConstraint.positionX(SKRange(constantValue: center - difference)), SKConstraint.positionX(SKRange(constantValue: center)), SKConstraint.positionX(SKRange(constantValue: center + difference))]
+        
     }
     
     
