@@ -43,6 +43,12 @@ class GameScene: SKScene {
     
     override func sceneDidLoad() {
         super.sceneDidLoad()
+        
+        let center = size.width/2.0
+        let difference = CGFloat(70.0)
+        
+        ball.constraints = [SKConstraint.positionX(SKRange(constantValue: center - difference)), SKConstraint.positionX(SKRange(constantValue: center)), SKConstraint.positionX(SKRange(constantValue: center + difference))]
+        
         scoreLabel = self.childNode(withName: "Score") as! SKLabelNode
         ball.position.x = 335
         ball.position.y = -262.07
